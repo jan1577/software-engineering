@@ -12,6 +12,7 @@ public class Elevator{
 		
 		this.dest_Floor=dest_floor;
 		System.out.println("*** Destination floor is: "+ dest_Floor);
+		System.out.println("Current state: " + State.getCurrent_state());
 		
 		if (current_Floor < dest_Floor) {
 			go_up();
@@ -26,15 +27,14 @@ public class Elevator{
 
 	private void arrive_to_floor() {
 		State.current_state = State.getIdle();
-		System.out.println("current floor " + current_Floor);
-		System.out.println("current state " + State.getCurrent_state());
+		System.out.println("Arrived at destination.");
+		print();
 		exit();
 	}
 	
 	private void go_up() {
 		State.current_state = State.getMoving_up();
-		System.out.println("current floor " + current_Floor);
-		System.out.println("current state " + State.getCurrent_state());
+		print();
 		current_Floor += 1;
 		if (current_Floor < dest_Floor) {
 			go_up();
@@ -46,8 +46,7 @@ public class Elevator{
 	
 	private void go_down() {
 		State.current_state = State.getMoving_down();
-		System.out.println("current floor " + current_Floor);
-		System.out.println("current state " + State.getCurrent_state());
+		print();
 		current_Floor -= 1;
 		if (current_Floor > dest_Floor) {
 			go_down();
@@ -61,6 +60,10 @@ public class Elevator{
 		System.out.println("Exit elevator");
 	}
 	
+	public void print() {
+		System.out.println("Current floor: " + current_Floor);
+		System.out.println("Current state: " + State.getCurrent_state());
+	}
 	
 
 	public int getCurrent_Floor() {
