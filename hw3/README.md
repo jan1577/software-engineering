@@ -1,4 +1,4 @@
-HW3: Java Implementation of UML State Machine Diagram
+# HW3: Java Implementation of UML State Machine Diagram
 
 This is the template project for implementing State Machine in Java for the Elevator example (refer to HW3 Task sheet).
 
