@@ -22,7 +22,7 @@ public class Player {
 			return s.pickCard();
 		}
 		else {
-			return play(repeated += 1);
+			return play(repeated + 1);
 		}
 	}
 
